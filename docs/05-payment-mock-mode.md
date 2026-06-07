@@ -18,11 +18,11 @@ The purchase plan button wasn't working at all - it was failing with a generic e
 6. **Backend changes**: Made Razorpay key and secret optional in `application.properties` (with default empty string)
 
 ## Files Modified
-- <mcfile>backend/src/main/java/filesharexapi/service/PaymentService.java</mcfile> - Added mock payment mode
-- <mcfile>backend/src/main/java/filesharexapi/dto/PaymentDTO.java</mcfile> - Added `isMock` field
-- <mcfile>frontend/src/components/landing/PricingSection.jsx</mcfile> - Fixed button actions
-- <mcfile>frontend/src/pages/Subscription.jsx</mcfile> - Added mock mode handling, improved error handling
-- <mcfile>frontend/src/pages/Landing.jsx</mcfile> - Updated props for PricingSection
+- backend/src/main/java/filesharexapi/service/PaymentService.java - Added mock payment mode
+- backend/src/main/java/filesharexapi/dto/PaymentDTO.java - Added `isMock` field
+- frontend/src/components/landing/PricingSection.jsx - Fixed button actions
+- frontend/src/pages/Subscription.jsx - Added mock mode handling, improved error handling
+- frontend/src/pages/Landing.jsx - Updated props for PricingSection
 
 ## Verification
 - Purchase plan button now works and navigates to subscription page

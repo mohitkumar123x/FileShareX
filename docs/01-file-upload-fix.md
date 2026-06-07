@@ -8,7 +8,7 @@ Users were unable to upload files, and the application was showing an error with
 ### 1. Upload Directory Mismatch (`FileMetadataService.java`)
 **Problem:** The code was trying to save files to "upload" directory, but the static resource config and expectations were for "uploads" (plural).
 
-**Location:** `backend/src/main/java/filesharexapi/service/FileMetadataService.java`
+**Location:** `backend/src/main/java/filesharexapi/service/FileMetadataService.java
 
 **Before:**
 ```java

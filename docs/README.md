@@ -4,19 +4,17 @@ This folder contains documentation of issues encountered and their resolutions d
 
 ## Issues Documented
 
-1. **[bushansirgur Removal](./01-bushansirgur-removal.md)** - Removing "bushansirgur" references from the entire application
-2. **[File Upload Fix](./02-file-upload-fix.md)** - Fixing the file upload functionality that was failing
-3. **[Docker File Persistence](./03-docker-file-persistence.md)** - Adding volume persistence for uploaded files in Docker
-4. **[Clerk Configuration](./04-clerk-configuration.md)** - Adding missing Clerk JWT validation configuration to Docker
-5. **[Profile Auto-Creation](./05-profile-auto-creation.md)** - Automatically creating profiles for new users
-6. **[Payment Mock Mode](./06-payment-mock-mode.md)** - Adding mock payment mode for development without Razorpay keys
-7. **[SPA Routing Fix](./07-spa-routing-fix.md)** - Fixing Nginx routing for single-page application
+1. **[File Upload Fix](./01-file-upload-fix.md)** - Fixing the file upload functionality that was failing
+2. **[Docker File Persistence](./02-docker-file-persistence.md)** - Adding volume persistence for uploaded files in Docker
+3. **[Clerk Configuration](./03-clerk-configuration.md)** - Adding missing Clerk JWT validation configuration to Docker
+4. **[Profile Auto-Creation](./04-profile-auto-creation.md)** - Automatically creating profiles for new users
+5. **[Payment Mock Mode](./05-payment-mock-mode.md)** - Adding mock payment mode for development without Razorpay keys
+6. **[SPA Routing Fix](./06-spa-routing-fix.md)** - Fixing Nginx routing for single-page application
 
 ## Summary of All Fixes
 
 | Issue | Files Modified | Status |
 |-------|----------------|--------|
-| bushansirgur Removal | build.gradle, Java packages, LLD docs | ✅ Fixed |
 | Upload Directory Mismatch | FileMetadataService.java | ✅ Fixed |
 | File Extension Handling | FileMetadataService.java | ✅ Fixed |
 | Exception Handling | GlobalExceptionHandler.java | ✅ Fixed |

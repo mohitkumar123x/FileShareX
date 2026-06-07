@@ -12,8 +12,8 @@ The default Nginx configuration was missing the `try_files` directive, which tel
 - Added `try_files $uri $uri/ /index.html;` to handle all SPA routes
 
 ## Files Modified
-- <mcfile>frontend/nginx.conf</mcfile> - Created custom nginx config for SPA
-- <mcfile>frontend/Dockerfile</mcfile> - Updated to use the custom nginx config
+- frontend/nginx.conf - Created custom nginx config for SPA
+- frontend/Dockerfile - Updated to use the custom nginx config
 
 ## Verification
 - Directly navigating to /subscriptions, /dashboard, etc. now works correctly
