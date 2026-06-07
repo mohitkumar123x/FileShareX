@@ -1,0 +1,50 @@
+services:
+  mongo:
+    image: mongo:7
+    container_name: filesharex-mongo
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: filesharex-backend
+    restart: unless-stopped
+    depends_on:
+      - mongo
+    environment:
+      SPRING_DATA_MONGODB_URI: mongodb://mongo:27017/FileShareX
+      PORT: "8080"
+      UPLOAD_DIR: "/app/uploads"
+      CLERK_ISSUER: "https://key-foxhound-56.clerk.accounts.dev"
+      CLERK_JWKS_URL: "https://key-foxhound-56.clerk.accounts.dev/.well-known/jwks.json"
+      # CLERK_WEBHOOK_SECRET: ...
+      # RAZORPAY_KEY_ID: ...
+      # RAZORPAY_KEY_SECRET: ...
+    ports:
+      - "8080:8080"
+    volumes:
+      - uploads_data:/app/uploads
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+      args:
+        VITE_CLERK_PUBLISHABLE_KEY: ${VITE_CLERK_PUBLISHABLE_KEY}
+        VITE_RAZORPAY_KEY: ${VITE_RAZORPAY_KEY}
+        VITE_API_BASE_URL: ${VITE_API_BASE_URL:-http://localhost:8080/api/v1.0}
+    container_name: filesharex-frontend
+    restart: unless-stopped
+    depends_on:
+      - backend
+    ports:
+      - "5174:80"
+
+volumes:
+  mongo_data:
+  uploads_data:
