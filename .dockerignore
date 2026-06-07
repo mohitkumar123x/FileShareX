@@ -1,0 +1,28 @@
+# OS files
+Thumbs.db
+.DS_Store
+
+# IDE
+.idea
+.vscode
+*.swp
+*.swo
+*~
+
+# Git
+.git
+.gitignore
+
+# Documentation
+docs
+HLD
+LLD
+*.md
+
+# Node modules (but we don't want these in root)
+node_modules
+
+# Uploads and other data
+uploads
+mongo_data
+*.log

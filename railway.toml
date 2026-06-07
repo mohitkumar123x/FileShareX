@@ -1,0 +1,19 @@
+# Railway Deployment Configuration
+
+[project]
+name = "filesharex"
+
+[services.backend]
+name = "backend"
+source = "backend"
+build = { builder = "docker", dockerfile = "Dockerfile" }
+env = [
+  { name = "PORT", value = "8080" },
+  { name = "UPLOAD_DIR", value = "/app/uploads" }
+]
+healthcheckPath = "/api/v1.0/health"
+
+[services.frontend]
+name = "frontend"
+source = "frontend"
+build = { builder = "docker", dockerfile = "Dockerfile" }
